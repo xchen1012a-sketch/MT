@@ -1,6 +1,6 @@
 # API 客户端规范
 
-接口的权威规则见[后端 API 契约](<../../backend/. ai-spec/api-contract.md>)，本规范只定义前端如何调用与适配。
+接口的权威规则见[后端 API 契约](<../../backend/.ai-spec/api-contract.md>)，本规范只定义前端如何调用与适配。
 
 ## 请求与类型
 

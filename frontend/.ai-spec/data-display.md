@@ -1,6 +1,6 @@
 # 金融数据展示与刷新规范
 
-字段格式与计算含义以[后端数据语义](<../../backend/. ai-spec/data-semantics.md>)为准，数据新鲜度以[采集接收规范](<../../backend/. ai-spec/ingestion.md>)为准。
+字段格式与计算含义以[后端数据语义](<../../backend/.ai-spec/data-semantics.md>)为准，数据新鲜度以[采集接收规范](<../../backend/.ai-spec/ingestion.md>)为准。
 
 ## 数据展示
 

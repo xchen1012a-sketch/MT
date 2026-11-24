@@ -1,0 +1,43 @@
+# ---- Python / backend ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---- Node / frontend ----
+node_modules/
+.pnpm-store/
+.eslintcache
+*.log
+
+# ---- 构建产物与运行数据（只忽略项目根部的，避免误伤源码目录）----
+/dist/
+/build/
+/data/
+/logs/
+secrets/
+*.db
+*.sqlite3
+
+# ---- 环境变量与密钥（严禁入库）----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---- 第三方源码快照：只留源码，不留它的构建产物 ----
+vendor/echarts/dist/
+vendor/echarts/.metadata
+
+# ---- 系统与编辑器 ----
+.DS_Store
+.idea/
+.vscode/
+*.swp

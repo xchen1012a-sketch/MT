@@ -191,50 +191,30 @@ export default defineConfig({
   ],
 
   //================ pro 插件配置 =================
-  plugins: ['@umijs/max-plugin-openapi', '@umijs/request-record'],
+  plugins: ['@umijs/max-plugin-openapi'],
 
   /**
    * @name openAPI 插件的配置
-   * @description 基于 openapi 的规范生成serve 和mock，能减少很多样板代码
+   * @description 基于 openapi 的规范生成 serve 和 mock，能减少很多样板代码
    * @doc https://pro.ant.design/zh-cn/docs/openapi/
+   *
+   * TODO(P0)：后端 FastAPI 启动后，把 schemaPath 指向
+   * http://localhost:8000/api/v1/openapi.json 再启用，避免依赖 Ant Design Pro 的演示 schema。
    */
-  openAPI: [
-    {
-      requestLibPath: "import { request } from '@umijs/max'",
-      // 或者使用在线的版本
-      // schemaPath: "https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json"
-      schemaPath: join(__dirname, 'oneapi.json'),
-      mock: false,
-    },
-  ],
+  openAPI: [],
 
   tailwindcss: {},
 
   mock: {
     include: ['src/pages/**/_mock.ts'],
-    exclude: ['mock/requestRecord.mock.js'],
   },
-  utoopack: {
-    module: {
-      rules: {
-        '*.md': {
-          loaders: [{ loader: join(__dirname, 'md-raw-loader.cjs') }],
-          as: '*.js',
-        },
-      },
-    },
-    devServer: {
-      dynamicHmrChunkLists: true,
-      lazyDynamicImports: true,
-    },
-  },
-  requestRecord: {},
   exportStatic: {},
+  // 多 chunk 下 esbuild 助手函数名会互相覆盖，Umi 官方建议开启该开关
+  esbuildMinifyIIFE: true,
   define: {
     'process.env.CI': process.env.CI,
     'process.env.COMMIT_HASH': commitHash,
     __APP_VERSION__: require('./../package.json').version,
     __UMI_VERSION__: require('@umijs/max/package.json').version,
-    __UTOO_VERSION__: require('@utoo/pack/package.json').version,
   },
 });

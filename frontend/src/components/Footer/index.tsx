@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
 
   return (
     <div className={styles.footer}>
-      <div className={styles.copyright}>Ant Design Pro &copy; {year}</div>
+      <div className={styles.copyright}>MT5 中控台 &copy; {year}</div>
       <div className={styles.meta}>
         <span className={styles.group}>
           <span className={styles.label}>ver</span>
@@ -102,18 +102,6 @@ const Footer: React.FC = () => {
             rel="noopener noreferrer"
           >
             {__UMI_VERSION__}
-          </a>
-        </span>
-        <Divider orientation="vertical" className={styles.divider} />
-        <span className={styles.group}>
-          <span className={styles.label}>Utoo</span>
-          <a
-            className={styles.link}
-            href="https://utoo.land"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {__UTOO_VERSION__}
           </a>
         </span>
         <Divider orientation="vertical" className={styles.divider} />

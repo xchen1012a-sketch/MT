@@ -52,7 +52,7 @@ describe('app getInitialState', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockHistory.location = {
-      pathname: '/welcome',
+      pathname: '/dashboard',
       search: '',
       hash: '',
     };

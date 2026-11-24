@@ -23,6 +23,8 @@
 
 ## 已做的裁剪
 
-- FastAPI 模板：只取 `backend/`，模板自带的 React `frontend/`、根级 compose 与 CI 配置均未引入。
-- 模板根级 `uv.lock` 为工作区模式产物，暂存为 `backend/uv.lock.upstream` 供参考，独立化后需重新 `uv lock` 生成正式锁文件。
-- Ant Design Pro：保留完整脚手架（含 mock、e2e、config），业务裁剪在后续迭代进行。
+- **Ant Design Pro**：删除全部示例业务页面（列表、表格、表单、详情、个人中心、结果页、AI 助手、欢迎页、分析/监控/工作台），只保留登录注册、总览骨架与异常页；同步删除仅被这些页面使用的组件与依赖（`@ant-design/plots`、`@ant-design/x*`、`d3`、`topojson-client`、`china-division`、`highlight.js`）、`cloudflare-worker/` 与简化脚本。源码从 45M 降到 888K。
+- **FastAPI 模板**：只取 `backend/`，模板自带的 React `frontend/`、根级 compose 与 CI 配置均未引入。
+- **FastAPI 模板**：删除示例业务模块 `Item`（模型、路由、CRUD、测试），5 个历史迁移合并为单个 `0001_initial_user.py`；移除模板的 React 静态托管。
+- **FastAPI 模板**：依赖锁已重新生成为 `backend/uv.lock`，原工作区模式锁文件已废弃。
+- **ECharts**：只保留 `src/` 与许可证文件，删除 `dist`、`test`、`build`、`extension-src`、`ssr`、`i18n`、`theme` 等目录，98M 降到 5.9M。

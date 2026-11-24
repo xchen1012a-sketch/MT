@@ -1,8 +1,0 @@
-{
-    "name": "echarts-testDts",
-    "version": "1.0.0",
-    "type": "module",
-    "dependencies": {
-        "echarts": "file:../.."
-    }
-}
